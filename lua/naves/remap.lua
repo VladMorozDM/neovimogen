@@ -9,4 +9,4 @@ vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("v", "jk", "<ESC>")
 
 vim.keymap.set("n", "<leader>,", vim.cmd.Ex)
-print("remap")
+
