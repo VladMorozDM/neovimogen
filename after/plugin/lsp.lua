@@ -94,7 +94,7 @@ require('lspconfig').lua_ls.setup({
 cmp.setup({
   sources = {
     {name = 'nvim_lsp'},
-    {name = 'nvim_autocomplete'},
+    {name = ''},
   },
   snippet = {
     expand = function(args)
