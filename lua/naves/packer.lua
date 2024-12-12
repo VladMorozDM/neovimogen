@@ -12,9 +12,12 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdateSync'}),
   use("theprimeagen/harpoon"),
   use('mbbill/undotree'),
-  use({'neovim/nvim-lspconfig'}),
-  use({'hrsh7th/nvim-cmp'}),
-  use({'hrsh7th/cmp-nvim-lsp'}),
+  use({
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }),
+
   requires = { {'nvim-lua/plenary.nvim'} }
 }
 end)
