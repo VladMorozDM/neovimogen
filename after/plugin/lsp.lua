@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "clangd" }
+    ensure_installed = { "lua_ls", "clangd", "cmake" }
 })
 local lsp_keymap = function(_, _)
     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', {})
@@ -20,5 +20,8 @@ lsp_config.lua_ls.setup({
     on_attach = lsp_keymap
 })
 lsp_config.clangd.setup({
+    on_attach = lsp_keymap
+})
+lsp_config.cmake.setup({
     on_attach = lsp_keymap
 })
