@@ -5,11 +5,11 @@ vim.cmd [[packadd packer.nvim]]
 return require("packer").startup(function(use)
     -- Packer can manage itself
     use("wbthomason/packer.nvim")
-    use({ "rose-pine/neovim", as = "rose-pine" })
     use({
         "nvim-telescope/telescope.nvim", tag = "0.1.8",
         -- or                            , branch = "0.1.x"
         use("nvim-treesitter/nvim-treesitter", {run = ":TSUpdateSync"}),
+        use("nvim-treesitter/nvim-treesitter-context"),
         requires = { {"nvim-lua/plenary.nvim"} }
     })
     use("theprimeagen/harpoon")
@@ -34,4 +34,7 @@ return require("packer").startup(function(use)
         "hrsh7th/cmp-vsnip",
         "hrsh7th/vim-vsnip",
     })
+    use({ "catppuccin/nvim", as = "catppuccin" })
+    use("ThePrimeagen/vim-be-good")
+    use("rcarriga/nvim-notify")
 end)

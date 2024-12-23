@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "clangd", "cmake", "pylsp" }
+    ensure_installed = { "lua_ls", "clangd", "cmake", "pylsp", "bashls" }
 })
 local lsp_keymap = function(_, _)
     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', {})
@@ -10,9 +10,9 @@ local lsp_keymap = function(_, _)
     vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', {})
     vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', {})
     vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', {})
-    vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', {})
+    vim.keymap.set('n', '<leader>cr', '<cmd>lua vim.lsp.buf.rename()<cr>', {})
     vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', {})
-    vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', {})
+    vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', {})
 end
 -- Set up nvim-cmp.
 local cmp = require("cmp")
@@ -25,11 +25,13 @@ cmp.setup({
         end,
     },
     window = {
-        -- completion = cmp.config.window.bordered(),
-        -- documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-x>'] = cmp.mapping.select_next_item(),
+        ['<C-z>'] = cmp.mapping.select_prev_item(),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
@@ -37,6 +39,7 @@ cmp.setup({
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
+        { name = 'path' },
         { name = 'vsnip' }, -- For vsnip users.
     }, {
         { name = 'buffer' },
@@ -77,3 +80,12 @@ lsp_config.pylsp.setup({
     on_attach = lsp_keymap,
     capabilities = capabilities
 })
+lsp_config.bashls.setup({
+    on_attach = lsp_keymap,
+    capabilities = capabilities,
+})
+lsp_config.cmake.setup({
+    on_attach = lsp_keymap,
+    capabilities = capabilities,
+})
+
