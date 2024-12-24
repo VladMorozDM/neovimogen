@@ -1,4 +1,5 @@
-require("mason").setup() require("mason-lspconfig").setup({
+require("mason").setup()
+require("mason-lspconfig").setup({
     ensure_installed = { "lua_ls", "clangd", "cmake", "pylsp", }
 })
 local lsp_keymap = function(_, _)
@@ -29,7 +30,7 @@ cmp.setup({
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-x>'] = cmp.mapping.select_next_item(),
+        ['<Tab>'] = cmp.mapping.select_next_item(),
         ['<C-z>'] = cmp.mapping.select_prev_item(),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),

@@ -54,6 +54,7 @@ require("lazy").setup({
     { "catppuccin/nvim", name = "catppuccin"  },
     "ThePrimeagen/vim-be-good",
     "rcarriga/nvim-notify",
+    {   "folke/trouble.nvim", opts = {}, cmd = "Trouble", }
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
@@ -61,5 +62,5 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
-
+-- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 vim.cmd.colorscheme "catppuccin"
