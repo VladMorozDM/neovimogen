@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "clangd", "cmake", "pylsp", }
+    ensure_installed = { "lua_ls", "clangd", "cmake", "pylsp", 'bashls' }
 })
 local lsp_keymap = function(_, _)
     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', {})
@@ -51,7 +51,8 @@ cmp.setup({
 cmp.setup.cmdline({ '/', '?' }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
-        { name = 'buffer' }
+        { name = 'buffer' },
+        { name = 'fine-cmdline' }
     }
 })
 
@@ -61,7 +62,8 @@ cmp.setup.cmdline(':', {
     sources = cmp.config.sources({
         { name = 'path' }
     }, {
-        { name = 'cmdline' }
+        { name = 'cmdline' },
+        { name = 'fine-cmdline' },
     }),
     matching = { disallow_symbol_nonprefix_matching = false }
 })
