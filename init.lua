@@ -25,11 +25,16 @@ vim.g.maplocalleader = " "
 
 
 vim.keymap.set("n", "<leader>,", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>y", "\"+y")
+vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set("n", "<leader>Y", "\"+Y")
+vim.keymap.set("n", "<leader>,", vim.cmd.Ex)
+
 -- Setup lazy.nvim
 require("lazy").setup({
     spec = {
         -- add your plugins here
-        { "nvim-telescope/telescope.nvim", version = "0.1.8" },
+        { "nvim-telescope/telescope.nvim", version = "0.1.6" },
         { "nvim-treesitter/nvim-treesitter", build = ":TSUpdateSync" },
         { "nvim-treesitter/nvim-treesitter-context", dependencies = { "nvim-lua/plenary.nvim" } },
 
@@ -76,7 +81,6 @@ require("lazy").setup({
                 {
                     "<leader>cl",
                     "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-                    desc = "LSP Definitions / references / ... (Trouble)",
                 },
                 {
                     "<leader>xL",

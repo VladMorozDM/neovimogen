@@ -10,7 +10,7 @@ local lsp_keymap = function(_, _)
     vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', {})
     vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', {})
     vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', {})
-    vim.keymap.set('n', '<leader>cr', '<cmd>lua vim.lsp.buf.rename()<cr>', {})
+    vim.keymap.set('n', '<leader>vr', '<cmd>lua vim.lsp.buf.rename()<cr>', {})
     vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', {})
     vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', {})
 end
@@ -20,8 +20,8 @@ cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-        --     vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
-        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+            --     vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
+            vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
         end,
     },
     window = {
