@@ -29,7 +29,9 @@ vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("n", "<leader>,", vim.cmd.Ex)
-
+-- sets macro for easy target copy for Expresslrs
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 -- Setup lazy.nvim
 require("lazy").setup({
     spec = {

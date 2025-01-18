@@ -1,5 +1,5 @@
-vim.keymap.set("i", "jk", "<ESC>")
-vim.keymap.set("v", "jk", "<ESC>")
+vim.keymap.set("i", "jj", "<ESC>")
+vim.keymap.set("v", "jj", "<ESC>")
 
 vim.keymap.set("n", "<UP>", "<NOP>")
 vim.keymap.set("n", "<DOWN>", "<NOP>")
