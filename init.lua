@@ -58,7 +58,7 @@ require("lazy").setup({
         "hrsh7th/cmp-vsnip",
         "hrsh7th/vim-vsnip",
 
-        { "catppuccin/nvim", name = "catppuccin"  },
+        { "catppuccin/nvim", name = "catppuccin", opts = { transparent_background = true }  },
         "ThePrimeagen/vim-be-good",
         {
             "folke/trouble.nvim",
