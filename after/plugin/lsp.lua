@@ -90,7 +90,7 @@ lsp_config.cmake.setup({
     on_attach = lsp_keymap,
     capabilities = capabilities,
 })
-lsp_config.ts_ls({
+lsp_config.ts_ls.setup({
     on_attach = lsp_keymap,
     capabilities = capabilities,
 })
