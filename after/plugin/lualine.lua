@@ -25,7 +25,7 @@ require("lualine").setup {
         lualine_b = {"branch", "diff", "diagnostics"},
         lualine_c = {"filename"},
         lualine_x = {
-            "encoding", "fileformat", "filetype",
+            "cdate", "ctime", "fileformat", "filetype",
             { prose.word_count,   cond = prose.is_available },
             { prose.reading_time, cond = prose.is_available },
         },

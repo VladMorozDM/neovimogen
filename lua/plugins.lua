@@ -11,6 +11,10 @@ return {
     "neovim/nvim-lspconfig",
 
     { "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons", lazy = true } },
+    {
+        "nvim-lualine/lualine.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons", "archibate/lualine-time", lazy = true }
+    },
     --#lsp snippet suggestion
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
