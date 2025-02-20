@@ -1,10 +1,8 @@
 local builtin = require('telescope.builtin')
-local extensions = require('telescope').extensions
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Telescope find git files' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telecscope live grep' })
 vim.keymap.set('n', '<leader>fs', builtin.grep_string, { desc = 'Telecscope sting grep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telecscope buffers' })
-vim.keymap.set('n', '<leader>fn', extensions.notify.notify)
 vim.keymap.set('n', '<leader>b', '<C-^>')
 vim.keymap.set('n', '<C-b>', '<C-^>')
