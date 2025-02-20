@@ -1,13 +1,14 @@
-vim.keymap.set({"v", "i"}, "jk", "<ESC>")
+vim.keymap.set("i", "jk", "<ESC>")
 -- що ж поробиш
 vim.keymap.set("n", "<UP>", "<NOP>")
 vim.keymap.set("n", "<DOWN>", "<NOP>")
 vim.keymap.set("n", "<RIGHT>", "<NOP>")
 vim.keymap.set("n", "<LEFT>", "<NOP>")
 
-vim.keymap.set("n", "<leader>,", vim.cmd.Ex)
+vim.keymap.set({ "v", "n" }, "<leader>pv", vim.cmd.Ex)
 vim.keymap.set({ "v", "n" }, "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
+vim.keymap.set({ "v", "n" }, "<leader>Y", "\"+Y")
+vim.keymap.set({ "x", "n" }, "<leader>p", "\"_dP")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
